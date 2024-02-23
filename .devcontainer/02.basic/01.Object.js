@@ -13,15 +13,26 @@ const Ob = {
     LastlogedIN : ["Monday", "Saturday"]
 }
 
-console.log(Ob.name);          // you can get output of object enteries which is declared using " " colon.
+// console.log(Ob.name);          // you can get output of object enteries which is declared using " " colon.
 
-console.log(Ob["full name"]);    // '[]' access any object enteries with square bracket.
+// console.log(Ob["full name"]);    // '[]' access any object enteries with square bracket.
 
-console.log(Ob.email);
-console.log(Ob[mySym]);
+// console.log(Ob.email);
+// console.log(Ob[mySym]);
 // Object.freeze(Ob);          // it stop the made change in object 
 Ob.email = "dkumawat@gmail.in"
 
-console.log(Ob.email)
+// console.log(Ob.email)
 
-console.log(Ob);
+// console.log(Ob);
+
+Ob.greeting = function() {
+    console.log("hello Js user");
+}
+
+Ob.greetingTwo = function(){
+    console.log(`hello! JS User ${this.name}`)
+}
+
+console.log(Ob.greeting()); 
+console.log(Ob.greetingTwo()); 
