@@ -66,4 +66,8 @@ function getSecondvalue(getarr){
 }
 
 // console.log(getSecondvalue(myArray));
-console.log(getSecondvalue([200, 300, 400, 500]));
+console.log(getSecondvalue([200, 300, 400, 500]));                                      
+
+
+
+    // to remove 'git init' repo use '****    Remove-Item -Recurse -Force .\.git   ****'
