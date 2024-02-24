@@ -34,4 +34,36 @@ function localfunction(username = "Sam") {
 }
 
 // console.log(localfunction());
-console.log(localfunction("Drashan"));
+// console.log(localfunction("Drashan"));
+
+
+function getcartprice (...num1) {               // rest operator
+    return num1
+}
+
+// console.log(getcartprice(200, 400, 500, 2000))
+
+const user ={
+    username : "darshan",
+    prices : "999"
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and it price is ${anyobject.prices}`)
+    return
+}
+
+// handleObject(user);
+// handleObject({
+//     username : "sam",
+//     prices : "399"
+// })
+
+const myArray = [200, 300, 400, 500]
+
+function getSecondvalue(getarr){
+    return getarr[1]
+}
+
+// console.log(getSecondvalue(myArray));
+console.log(getSecondvalue([200, 300, 400, 500]));
