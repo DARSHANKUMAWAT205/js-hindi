@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+<body style="background-color: #212121; color : #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+     
+</body>
+<script>
+
+    // add...............
+
+    function add_Language(Langname){
+        const li =document.createElement('li')
+        li.innerHTML = `${Langname}`                // not  optimal solution it triverse whole li tree
+        document.querySelector(".language").appendChild(li)
+    }
+    add_Language("Python")
+    add_Language("Typescript")
+
+    function addOtiLanguage(langname){
+       const li = document.createElement("li")
+    //    const name = document.createTextNode(langname)     // unconjusted 
+    //    li.appendChild(name)
+       li.appendChild(document.createTextNode (langname))  // it is optimal solution 
+       document.querySelector('.language').appendChild(li)   
+    }
+    addOtiLanguage('golang')
+
+    // edit..........
+    const secondlang = document.querySelector("li:nth-child(2)")
+    const newli = document.createElement('li')
+    newli.textContent = "MoJO"                                      // 1--Method
+    secondlang.replaceWith(newli)
+
+    const firstlang = document.querySelector("li:nth-child(1)")     //2-Method
+    firstlang.outerHTML = '<li>Typescript</li>'
+
+    // remove...........
+
+    const Firstlang = document.querySelector("li:nth-child(1)")    
+    Firstlang.remove()
+    
+</script>
+</html>
