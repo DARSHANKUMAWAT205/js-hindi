@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHai aur Code</title>
+</head>
+<body style="background-color: #212121; color : #fff;">
+     
+</body>
+<script>
+
+    let n =  prompt("enter a number");
+
+const colorArr = ["green","blue","black", "red","yellow"]
+
+for (let i = 0; i < n; i++) {  
+   createaTag("div")
+}
+
+function createaTag(element) {
+   const newTag = document.createElement(element)
+//    const h1 = document.createnewTag("h1")
+   console.log(newTag);
+//    console.log(h1);
+        newTag.className ="main"
+        newTag.id =Math.round(Math.random() *10 + 1)
+        newTag.setAttribute("title", "generate title")       
+        newTag.style.backgroundColor = 'green'
+        newTag.style.padding ="12px"
+        // element.innerText = "Chai aur Code"     //  first it selct value and overwrite it
+        const addText = document.createTextNode("Chai aur Code")
+        newTag.appendChild(addText)        // it edit directly and not overwrite it (like innertext)
+        document.body.appendChild(newTag)
+
+    }
+    
+
+
+</script>
+</html>
