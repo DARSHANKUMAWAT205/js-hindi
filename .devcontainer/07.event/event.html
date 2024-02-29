@@ -8,33 +8,70 @@
 <body>
 
     
-    <!-- <h1>Amazing Images</h1>
+    <h1>Amazing Images</h1>
     <div>
-        <ul class = "images">
+        <ul id = "images">
             <li><img id="w" width="200px" src="images/w.webp" alt="">w</li>
             <li><img id="e" width="200px" src="images/safer-browsing-kids(1).webp" alt="">e</li>
             <li><img id="r" width="200px" src="images/safer-browsing-kids(2).webp" alt="">r</li>
             <li><img id="t" width="200px" src="images/shopping-list.webp" alt=""></li>
-            <li><img id="y" width="200px" src="images/translations(1).webp" alt="" onclick= "alert('owl')">y</li>
+            <!-- <li><img id="y" width="200px" src="images/translations(1).webp" alt="" onclick= "alert('owl')">y</li> -->
             <li><img id="u" width="200px" src="images/translations(2).webp" alt=""></li>
             <li><img id="i" width="200px" src="images/web-store.webp" alt=""></li>
             <li><a id="google" href="https://www.google.com">Google</a></li>
         </ul>
-    </div> -->
+    </div>
 </body>
 <script>
 
-    document.getElementById('r').onclick = () => {
-        alert("r was clicked")
-    }
+    // document.getElementById('r').onclick = () => {
+    //     // alert("r was clicked")
+    // }
 
-    // const images = document.getElementById('images') 
+    //     attachEvent() , j-jQuery        old method
+
+    // document.getElementById('r').addEventListener('click', () => {
+    //     // alert("r is clicked")
+    // })
    
+    // document.getElementById('r').addEventListener('click', (e) => {
+    //    console.log(e);
+    // },false)
+
     // images.forEach((image) => {
-    //    addEventListener("click", () => {
+    //    addEventListener("click", (event) => {
     //     console.log("image clicked" );
     //    })   
     // });
+
+// Event propagation
+
+        //true   ((capturing)  li => ul => div)   inside to outside
+        //false  ((bubling)    div => ul => li )    outside to inside
+
+    document.getElementById('images').addEventListener('click',function(e){
+        // console.log('clicked inside the ul');
+    }, false);   // true              
+
+    document.getElementById('r').addEventListener("click",function(e){
+        // console.log('r is click');
+        // e.stopPropagation()           
+    },false);   // true
+
+    // document.getElementById('google').addEventListener('click',(e)=>{
+    //     console.log('google is clicked');
+    //     e.preventDefault()
+    // })
+
+    document.getElementById('images').addEventListener('click',(e)=>{
+        // console.log(e.target.parentNode)    //(e.target.parentNode = <li></li>)
+        console.log(e.target.tagName)
+        if (e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode;
+            removeIt.remove() 
+        }                          //1method
+        // removeIt.parentNode.remove(removeIt)     //2method     <ul> me se <li> ko delete kr do
+    })
 
 </script>
 </html>
