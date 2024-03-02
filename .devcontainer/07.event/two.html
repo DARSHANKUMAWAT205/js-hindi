@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS series</title>
+</head>
+<body>
+    <h1>JS Code Notes</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(() => {
+    //     // console.log("hey hey hey")         // run one time 
+    // },2000)
+
+
+    // setInterval(() => {
+    //     // console.log("hey hey hey")        // run in loop 
+    // },2000)
+
+    const sayDarshan = function(){
+        console.log("hey,Darshan")
+    }
+
+    // setTimeout(sayDarshan,2000)
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS notes"
+    }
+
+    // setTimeout(changeText,2000)
+    const changeME = setTimeout(changeText,2000)
+
+    // clearTimeout(changeME) 
+
+    document.querySelector('button').addEventListener('click', ()=> {
+        clearTimeout(changeME)
+        console.log('stopped');
+    })
+
+    
+
+</script>
+</html>
